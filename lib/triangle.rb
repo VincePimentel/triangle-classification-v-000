@@ -13,7 +13,7 @@ class Triangle
 
   def isosceles?
     side = [@a, @b, @c].sort
-
+    side[0] + side[1] > side[2] ? true : false
   end
 
   def scalene?
