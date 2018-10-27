@@ -20,7 +20,7 @@ class Triangle
   end
 
   def equilateral?
-    @a == @b && @a == @c ? true : false
+    @a == @b && @a == @c && @b == @c ? true : false
   end
 
   def kind
