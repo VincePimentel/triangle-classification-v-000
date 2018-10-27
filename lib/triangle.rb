@@ -11,9 +11,9 @@ class Triangle
     if a != 0 || b != 0 || c != 0
       if a == b || a == c || b == c
         return :isosceles
-      elsif a != b && a != c && b != c
+      elsif a != b && a != c
         return :scalene
-      elsif a == b && a == c && b == c
+      elsif a == b && a == c
         return :equilateral
       end
     else
