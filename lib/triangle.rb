@@ -20,11 +20,7 @@ class Triangle
   end
 
   def isosceles?
-    if valid_triangle? && @@triangle[1] == @@triangle[2]
-      return true
-    else
-      return false
-    end
+    valid_triangle? && @@triangle[1] == @@triangle[2] ? true : false
   end
 
   def scalene?
