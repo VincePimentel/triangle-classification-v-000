@@ -15,9 +15,13 @@ class Triangle
         return :scalene
       elsif a == b && a == c && b == c
         return :equilateral
-      end        
+      end
     else
-      
+      raise TriangleError
     end
+  end
+
+  class TriangleError < StandardError
+
   end
 end
