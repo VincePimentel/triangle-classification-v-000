@@ -1,27 +1,34 @@
 class Triangle
   attr_accessor :a, :b, :c
 
+  @@triangle = [@a, @b, @c].sort
+
   def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
   end
 
-  def zero_or_negative?
-    [@a, @b, @c].include?(0) || [@a, @b, @c].join.include?("-") ? true : false
+  def valid_triangle?
+    if @@triangle[0] + @@triangle[1] > @@triangle[2] ||
+      @@triangle[1] + @@triangle[2] > @@triangle[0] ||
+      @@triangle[0] + @@triangle[2] > @@triangle[1]
+      return true
+    else
+      return false
+    end
   end
 
   def isosceles?
-    side = [@a, @b, @c].sort
-    side[1] == side[2] ? true : false
+    @@triangle[1] == @@triangle[2] ? true : false
   end
 
   def scalene?
-    @a != @b && @a != @c && @b != @c ? true : false
+    
   end
 
   def equilateral?
-    @a == @b && @a == @c && @b == @c ? true : false
+    
   end
 
   def kind
