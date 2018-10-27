@@ -8,7 +8,7 @@ class Triangle
   end
 
   def kind
-    if ![a, b, c].include?(0)
+    if ![a, b, c].any?(0)
       if a == b || a == c || b == c
         return :isosceles
       elsif a != b && a != c
@@ -16,7 +16,7 @@ class Triangle
       elsif [a, b, c] == [a] * 3
         return :equilateral
       end
-    else
+    else [a, b, c].any?(0) || [a, b, c].join(" ") .include?("-")
       raise TriangleError
     end
   end
