@@ -12,11 +12,11 @@ class Triangle
   end
 
   def isosceles?
-    @a == @b || @a == @c || @b == @c ? true : false
+    (@a == @b && @a != @c) || (@a == @c && @a != @b) || (@b == @c && @b != @a) ? true : false
   end
 
   def scalene?
-    @a != @b && @a != @c ? true : false
+    @a != @b && @a != @c && @b != @c ? true : false
   end
 
   def equilateral?
