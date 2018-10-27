@@ -12,7 +12,8 @@ class Triangle
   end
 
   def isosceles?
-    (@a == @b && @a != @c) || (@a == @c && @a != @b) || (@b == @c && @b != @a) ? true : false
+    side = [@a, @b, @c].sort
+
   end
 
   def scalene?
