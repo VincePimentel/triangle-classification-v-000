@@ -8,7 +8,7 @@ class Triangle
   end
 
   def zero_or_negative?
-    [@a, @b, @c].include?(0) || [@a, @b, @c].join.any?("-") ? true : false
+    [@a, @b, @c].include?(0) || [@a, @b, @c].join.include?("-") ? true : false
   end
 
   def isosceles?
