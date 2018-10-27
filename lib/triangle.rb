@@ -20,15 +20,19 @@ class Triangle
   end
 
   def isosceles?
-    @@triangle[1] == @@triangle[2] ? true : false
+    if valid_triangle? && @@triangle[1] == @@triangle[2]
+      return true
+    else
+      return false
+    end
   end
 
   def scalene?
-    
+
   end
 
   def equilateral?
-    
+
   end
 
   def kind
