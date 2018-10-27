@@ -7,16 +7,32 @@ class Triangle
     @c = c
   end
 
+  def zero_or_negative?
+    [@a, @b, @c].join.match?(/[-|0]/) ? true : false
+  end
+
+  def isosceles?
+    @a == @b || @a == @c || @b == @c ? true : false
+  end
+
+  def scalene?
+    @a != @b && @a != @c ? true : false
+  end
+
+  def equilateral?
+    @a == @b && @a == @c ? true : false
+  end
+
   def kind
-    if ![a, b, c].any?(0)
-      if a == b || a == c || b == c
-        return :isosceles
-      elsif a != b && a != c
-        return :scalene
-      elsif [a, b, c] == [a] * 3
-        return :equilateral
+    if !zero_or_negative?
+      if isosceles?
+        :isosceles
+      elsif scalene?
+        :scalene
+      elsif equilateral?
+        :scalene
       end
-    else# [a, b, c].any?(0) || [a, b, c].join(" ").include?("-")
+    else
       raise TriangleError
     end
   end
