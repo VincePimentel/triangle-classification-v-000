@@ -16,7 +16,7 @@ class Triangle
       elsif [a, b, c] == [a] * 3
         return :equilateral
       end
-    else [a, b, c].any?(0) || [a, b, c].join(" ") .include?("-")
+    else [a, b, c].any?(0) || [a, b, c].join(" ").include?("-")
       raise TriangleError
     end
   end
