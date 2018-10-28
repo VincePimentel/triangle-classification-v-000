@@ -1,10 +1,11 @@
 class Triangle
-  attr_accessor :a, :b, :c
+  attr_accessor :a, :b, :c, :x
 
   def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
+    @x = [@a, @b, @c].sort
   end
 
   def zero_or_negative?
@@ -24,7 +25,7 @@ class Triangle
   end
 
   def isosceles?
-    valid_triangle? && @b == @c ? true : false
+    valid_triangle? && x[1] == x[2] ? true : false
   end
 
   def scalene?
