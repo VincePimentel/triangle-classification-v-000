@@ -9,6 +9,10 @@ class Triangle
   end
 
   def valid_triangle?
+    def zero_or_negative?
+      @s.include?(0) || @s.join.include?("-") ? true : false
+    end
+
     if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1]
       return true
     else
