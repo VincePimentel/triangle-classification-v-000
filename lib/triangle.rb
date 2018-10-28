@@ -29,8 +29,6 @@ class Triangle
     valid_triangle? && !equilateral? && !isosceles? ? true : false
   end
 
-
-
   def kind
     if equilateral?
       :equilateral
@@ -38,7 +36,7 @@ class Triangle
       :isosceles
     elsif scalene?
       :scalene
-    else
+    elsif !valid_triangle?
       raise TriangleError
     end
   end
