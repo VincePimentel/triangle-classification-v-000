@@ -13,7 +13,7 @@ class Triangle
       @s.include?(0) || @s.join.include?("-") ? true : false
     end
 
-    if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1]
+    if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1] && !zero_or_negative?
       return true
     else
       return false
