@@ -1,21 +1,21 @@
 class Triangle
-  attr_accessor :a, :b, :c
-
-  @@triangle = Array.new
+  attr_accessor :a, :b, :c, :s
 
   def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
-    @@triangle = [@a, @b, @c].sort
+    @s = [@a, @b, @c].sort
   end
 
+
+
   def valid_triangle?
-    if @@triangle[0].to_f + @@triangle[1].to_f > @@triangle[2].to_f
+    if @s[0].to_f + @s[1].to_f > @s[2].to_f
       return true
-    elsif @@triangle[1].to_f + @@triangle[2].to_f > @@triangle[0].to_f
+    elsif @s[1].to_f + @s[2].to_f > @s[0].to_f
       return true
-    elsif @@triangle[0].to_f + @@triangle[2].to_f > @@triangle[1].to_f
+    elsif @s[0].to_f + @s[2].to_f > @s[1].to_f
       return true
     else
       return false
@@ -23,11 +23,11 @@ class Triangle
   end
 
   def equilateral?
-    valid_triangle? && @@triangle[0] == @@triangle[1] && @@triangle[0] == @@triangle[2] ? true : false
+    valid_triangle? && @s[0] == @s[1] && @s[0] == @s[2] ? true : false
   end
 
   def isosceles?
-    valid_triangle? && @@triangle[1] == @@triangle[2] ? true : false
+    valid_triangle? && @s[1] == @s[2] ? true : false
   end
 
   def scalene?
