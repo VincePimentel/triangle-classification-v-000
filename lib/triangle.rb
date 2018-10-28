@@ -1,12 +1,13 @@
 class Triangle
   attr_accessor :a, :b, :c
 
-  @@triangle = [@a, @b, @c].sort
+
 
   def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
+    @@triangle = [@a, @b, @c].sort
   end
 
   def valid_triangle?
