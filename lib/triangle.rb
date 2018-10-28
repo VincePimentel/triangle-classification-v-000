@@ -11,6 +11,7 @@ class Triangle
   def zero_or_negative?
     @side_all.include?(0) || @side_all.join.include?("-") ? true : false
   end
+  # Check to find any 0's OR negatives
 
   def valid_triangle?
     @side_a + @side_b > @side_c && @side_b + @side_c > @side_a && @side_a + @side_c > @side_b && !zero_or_negative? ? true : false
