@@ -19,11 +19,12 @@ class Triangle
   def equilateral?
     valid_triangle? && @side_a == @side_b && @side_a == @side_c ? true : false
   end
+  # 3-way comparison. If @side_a equals @side_b AND @side_a equals @side_c then @side_b equals @side_c.
 
   def isosceles?
     valid_triangle? && @side_all.sort[1] == @side_all.sort[2] ? true : false
   end
-  # Sorted all 3 side values and compared the 2nd and 3rd values for equality since the remaining side @side_all[0] is always less than the other two.
+  # Sorted all 3 side values (@side_all.sort) and compared the 2nd and 3rd values for equality since the remaining side @side_all[0] is always less than the other two.
 
   def scalene?
     valid_triangle? && !equilateral? && !isosceles? ? true : false
