@@ -9,7 +9,7 @@ class Triangle
   end
 
   def valid_triangle?
-    if @s[0].to_f + @s[1].to_f > @s[2].to_f && @s[1].to_f + @s[2].to_f > @s[0].to_f && @s[0].to_f + @s[2].to_f > @s[1].to_f
+    if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1]
       return true
     else
       return false
