@@ -31,18 +31,18 @@ class Triangle
   end
 
   def kind
-    if equilateral?
-      :equilateral
-    elsif isosceles?
-      :isosceles
-    elsif scalene?
-      :scalene
-    elsif !valid_triangle?
+    if !valid_triangle?
       begin
         raise TriangleError
       rescue TriangleError => error
         puts error.message
       end
+    elsif equilateral?
+      :equilateral
+    elsif isosceles?
+      :isosceles
+    elsif scalene?
+      :scalene
     end
   end
 
