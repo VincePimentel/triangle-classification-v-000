@@ -23,6 +23,7 @@ class Triangle
   def isosceles?
     valid_triangle? && @side_all.sort[1] == @side_all.sort[2] ? true : false
   end
+  # Sorted all 3 side values and compared the 2nd and 3rd values for equality since the remaining side @side_all[0] is always less than the other two.
 
   def scalene?
     valid_triangle? && !equilateral? && !isosceles? ? true : false
