@@ -37,7 +37,7 @@ class Triangle
       :isosceles
     elsif scalene?
       :scalene
-    elsif !valid_triangle?
+    elsif valid_triangle? != true
       begin
         raise TriangleError
       rescue TriangleError => error
