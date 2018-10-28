@@ -8,14 +8,8 @@ class Triangle
     @s = [@a, @b, @c].sort
   end
 
-
-
   def valid_triangle?
-    if @s[0].to_f + @s[1].to_f > @s[2].to_f
-      return true
-    elsif @s[1].to_f + @s[2].to_f > @s[0].to_f
-      return true
-    elsif @s[0].to_f + @s[2].to_f > @s[1].to_f
+    if @s[0].to_f + @s[1].to_f > @s[2].to_f && @s[1].to_f + @s[2].to_f > @s[0].to_f && @s[0].to_f + @s[2].to_f > @s[1].to_f
       return true
     else
       return false
