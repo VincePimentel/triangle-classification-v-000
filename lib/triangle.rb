@@ -29,6 +29,7 @@ class Triangle
   def scalene?
     valid_triangle? && !equilateral? && !isosceles? ? true : false
   end
+  # Neither equilateral nor isosceles then it must be scalene.
 
   def kind
     if !valid_triangle?
