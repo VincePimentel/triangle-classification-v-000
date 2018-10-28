@@ -33,7 +33,7 @@ class Triangle
   end
 
   def kind
-    if !valid_triangle?
+    if valid_triangle?
       begin
         raise TriangleError
       rescue TriangleError => error
