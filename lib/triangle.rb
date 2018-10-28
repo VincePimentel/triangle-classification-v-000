@@ -8,11 +8,11 @@ class Triangle
     @s = [@a, @b, @c].sort
   end
 
-  def valid_triangle?
-    def zero_or_negative?
-      @s.include?(0) || @s.join.include?("-") ? true : false
-    end
+  def zero_or_negative?
+    @s.include?(0) || @s.join.include?("-") ? true : false
+  end
 
+  def valid_triangle?
     if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1] && !zero_or_negative?
       return true
     else
