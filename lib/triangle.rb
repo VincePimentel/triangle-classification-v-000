@@ -16,6 +16,7 @@ class Triangle
   def valid_triangle?
     @side_a + @side_b > @side_c && @side_b + @side_c > @side_a && @side_a + @side_c > @side_b && !zero_or_negative? ? true : false
   end
+  # Triangle inequality theorem - any 2 sides of a triangle must be greater than the 3rd side
 
   def equilateral?
     valid_triangle? && @side_a == @side_b && @side_a == @side_c ? true : false
