@@ -10,9 +10,9 @@ class Triangle
   end
 
   def valid_triangle?
-    if @@triangle[0] + @@triangle[1] > @@triangle[2] ||
-      @@triangle[1] + @@triangle[2] > @@triangle[0] ||
-      @@triangle[0] + @@triangle[2] > @@triangle[1]
+    if @@triangle[0].to_i + @@triangle[1].to_i > @@triangle[2].to_i ||
+      @@triangle[1].to_i + @@triangle[2].to_i > @@triangle[0].to_i ||
+      @@triangle[0].to_i + @@triangle[2].to_i > @@triangle[1].to_i
       return true
     else
       return false
