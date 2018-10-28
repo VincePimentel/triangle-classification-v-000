@@ -1,7 +1,7 @@
 class Triangle
   attr_accessor :a, :b, :c
 
-
+  @@triangle = Array.new
 
   def initialize(a, b, c)
     @a = a
