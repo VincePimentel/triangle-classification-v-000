@@ -25,7 +25,7 @@ class Triangle
   end
 
   def isosceles?
-    valid_triangle? && x[1] == x[2] ? true : false
+    valid_triangle? && @x[1] == @x[2] ? true : false
   end
 
   def scalene?
