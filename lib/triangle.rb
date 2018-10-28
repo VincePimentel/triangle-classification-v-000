@@ -1,19 +1,18 @@
 class Triangle
-  attr_accessor :a, :b, :c, :s
+  attr_accessor :a, :b, :c
 
   def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
-    @s = [@a, @b, @c].sort
   end
 
   def zero_or_negative?
-    @s.include?(0) || @s.join.include?("-") ? true : false
+    [@a, @b, @c].include?(0) || [@a, @b, @c].join.include?("-") ? true : false
   end
 
   def valid_triangle?
-    if @s[0] + @s[1] > @s[2] && @s[1] + @s[2] > @s[0] && @s[0] + @s[2] > @s[1] && !zero_or_negative?
+    if @a + @b > @c && @b + @c > @a && @a + @c > @b && !zero_or_negative?
       return true
     else
       return false
@@ -21,11 +20,11 @@ class Triangle
   end
 
   def equilateral?
-    valid_triangle? && @s[0] == @s[1] && @s[0] == @s[2] ? true : false
+    valid_triangle? && @a == @b && @a == @c ? true : false
   end
 
   def isosceles?
-    valid_triangle? && @s[1] == @s[2] ? true : false
+    valid_triangle? && @b == @c ? true : false
   end
 
   def scalene?
