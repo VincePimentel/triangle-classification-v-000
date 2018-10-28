@@ -39,7 +39,9 @@ class Triangle
       rescue TriangleError => error
         puts error.message
       end
-    elsif equilateral?
+    end
+    
+    if equilateral?
       :equilateral
     elsif isosceles?
       :isosceles
