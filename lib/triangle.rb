@@ -11,7 +11,7 @@ class Triangle
   end
 
   def valid_triangle?
-    if @@triangle[0].to_i + @@triangle[1].to_i > @@triangle[2].to_i || @@triangle[1].to_i + @@triangle[2].to_i > @@triangle[0].to_i || @@triangle[0].to_i + @@triangle[2].to_i > @@triangle[1].to_i
+    if @@triangle[0].to_f + @@triangle[1].to_f > @@triangle[2].to_f || @@triangle[1].to_f + @@triangle[2].to_f > @@triangle[0].to_f || @@triangle[0].to_f + @@triangle[2].to_f > @@triangle[1].to_f
       return true
     else
       return false
