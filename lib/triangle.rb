@@ -15,6 +15,8 @@ class Triangle
       return true
     elsif @@triangle[0] <= 0
       return false
+    else
+      return false
     end
   end
 
