@@ -15,7 +15,7 @@ class Triangle
       return true
     elsif @@triangle.include?(0)
       return false
-    else
+    else @@triangle[0] < 0
       return false
     end
   end
