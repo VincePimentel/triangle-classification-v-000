@@ -2,30 +2,26 @@ class Triangle
   attr_accessor :a, :b, :c, :x
 
   def initialize(a, b, c)
-    @a = a
-    @b = b
-    @c = c
-    @x = [@a, @b, @c]
+    @side_a = a
+    @side_b = b
+    @side_c = c
+    @side_all = [@side_a, @side_b, @side_c]
   end
 
   def zero_or_negative?
-    @x.include?(0) || @x.join.include?("-") ? true : false
+    @side_all.include?(0) || @side_all.join.include?("-") ? true : false
   end
 
   def valid_triangle?
-    if @a + @b > @c && @b + @c > @a && @a + @c > @b && !zero_or_negative?
-      return true
-    else
-      return false
-    end
+    @side_a + @side_b > @side_c && @side_b + @side_c > @side_a && @side_a + @side_c > @side_b && !zero_or_negative? ? true : false
   end
 
   def equilateral?
-    valid_triangle? && @a == @b && @a == @c ? true : false
+    valid_triangle? && @side_a == @side_b && @side_a == @side_c ? true : false
   end
 
   def isosceles?
-    valid_triangle? && @x.sort[1] == @x.sort[2] ? true : false
+    valid_triangle? && @side_all.sort[1] == @side_all.sort[2] ? true : false
   end
 
   def scalene?
