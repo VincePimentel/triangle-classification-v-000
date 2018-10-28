@@ -5,11 +5,11 @@ class Triangle
     @a = a
     @b = b
     @c = c
-    @x = [@a, @b, @c].sort
+    @x = [@a, @b, @c]
   end
 
   def zero_or_negative?
-    [@a, @b, @c].include?(0) || [@a, @b, @c].join.include?("-") ? true : false
+    @x.include?(0) || @x.join.include?("-") ? true : false
   end
 
   def valid_triangle?
@@ -25,7 +25,7 @@ class Triangle
   end
 
   def isosceles?
-    valid_triangle? && @x[1] == @x[2] ? true : false
+    valid_triangle? && @x.sort[1] == @x.sort[2] ? true : false
   end
 
   def scalene?
