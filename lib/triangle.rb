@@ -19,17 +19,19 @@ class Triangle
     end
   end
 
+  def equilateral?
+    valid_triangle? && @@triangle[0] == @@triangle[1] && @@triangle[0] == @@triangle[2] ? true : false
+  end
+
   def isosceles?
     valid_triangle? && @@triangle[1] == @@triangle[2] ? true : false
   end
 
   def scalene?
-
+    valid_triangle? && !equilateral? && !isosceles? ? true : false
   end
 
-  def equilateral?
 
-  end
 
   def kind
     if !zero_or_negative?
