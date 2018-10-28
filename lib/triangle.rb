@@ -37,7 +37,11 @@ class Triangle
     elsif scalene?
       :scalene
     elsif !valid_triangle?
-      raise TriangleError
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+        puts error.message
+      end
     end
   end
 
